@@ -4,7 +4,6 @@ import { onValue, ref } from "firebase/database";
 import { dbFirebase } from "../../../../../firebaseConfig";
 import { CardInfo } from "@/app/components/Card/CardInfo";
 import { SongItem2 } from "@/app/components/Song/SongItem2";
-import { Key } from "react";
 import { Title } from "@/app/components/Title/Title";
 
 export default async function CategoryDetailPage(props: any) {
@@ -15,7 +14,7 @@ export default async function CategoryDetailPage(props: any) {
     dataOfThisCategory = item.val();
   });
   
-  let songInCategory: any = [];
+  const songInCategory: any = [];
   const songRef = ref(dbFirebase, '/songs');
   onValue(songRef, (items) =>{
     items.forEach((item) =>{

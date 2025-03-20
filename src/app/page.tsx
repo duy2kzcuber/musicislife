@@ -34,7 +34,7 @@ export default async function Home() {
       if(dataSection1.length < 3){
         // xu li doan them ten tac gia:
         let singers: string = "";
-        let singerIDs: any = data.singerId;
+        const singerIDs: any = data.singerId;
         singerIDs.forEach((id:any,index:any) => {
           singers += dataOfSinger[id].title;
           if(index !== singerIDs.length - 1){
