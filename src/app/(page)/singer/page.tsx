@@ -7,7 +7,7 @@ import { CardCategory } from "@/app/components/Card/CardCategory";
 
 export default function Singer() {
   const singerRef = ref(dbFirebase, '/singers');
-  let dataFinal: any[] = [];
+  const dataFinal: any[] = [];
   onValue(singerRef, (singers) => {
     singers.forEach((singer) => {
       const key = singer.key;

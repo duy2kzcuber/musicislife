@@ -15,7 +15,7 @@ export default async function CategoryDetailPage(props: any) {
     dataOfThisCategory = item.val();
   });
   
-  let songInCategory: any = [];
+  const songInCategory: any = [];
   const songRef = ref(dbFirebase, '/songs');
   onValue(songRef, (items) =>{
     items.forEach((item) =>{

@@ -28,7 +28,7 @@ export default async function SongDetail(props: any){
   // lấy ra bài hát có cùng chủ đề
   const categoryId = await dataOfSong.categoryId;
   console.log(categoryId);
-  let dataOfRelatedSong: any = [];
+  const dataOfRelatedSong: any = [];
   onValue(ref(dbFirebase, '/songs'), (snapshot) =>{
     const data = snapshot.val();
     const key = snapshot.key;
