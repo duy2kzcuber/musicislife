@@ -1,7 +1,7 @@
 "use client"
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { getDatabase, ref, child, get, onValue } from "firebase/database";
+import { Suspense, useEffect, useState } from "react";
+import { ref, child, get, onValue } from "firebase/database";
 import { dbFirebase } from "../../../../firebaseConfig";
 import { SongItem2 } from "@/app/components/Song/SongItem2";
 export const SearchResult = () => {
