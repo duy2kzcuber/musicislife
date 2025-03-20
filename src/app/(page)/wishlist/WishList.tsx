@@ -6,7 +6,7 @@ import { onValue, ref, get } from "firebase/database";
 import { SongItem2 } from "@/app/components/Song/SongItem2";
 
 export const WishList = () => {
-  const [dataFinal, setDataFinal] = useState(null);
+  const [dataFinal, setDataFinal] = useState<any[]>([]);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

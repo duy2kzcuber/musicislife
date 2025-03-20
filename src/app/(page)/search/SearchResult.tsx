@@ -7,8 +7,8 @@ import { SongItem2 } from "@/app/components/Song/SongItem2";
 export const SearchResult = () => {
   const searchParam = useSearchParams();
   const keyword = searchParam.get("keyword")?.toLowerCase();
-
-  const [dataFinal, setDataFinal] = useState(null);
+  
+  const [dataFinal, setDataFinal] = useState<any[]>([]);
   useEffect(() => {
     const data: any = [];
     const fetchData = async () => {

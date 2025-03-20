@@ -77,7 +77,7 @@ export default async function SongDetail(props: any){
           <h2 className="text-[24px] font-[700] text-[#EFEEE0]">Bài hát cùng danh mục</h2>
           <div className="flex gap-y-[10px] flex-wrap">
           {
-            dataOfRelatedSong.map((song, index) => (
+            dataOfRelatedSong.map((song: any, index: any) => (
               <SongItem2 key={index} item={song} />
             ))
           }
