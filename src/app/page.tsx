@@ -1,10 +1,15 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 import { Title } from "./components/Title/Title";
 import { SongItem1 } from "./components/Song/SongItem1";
 import { CardCategory } from "./components/Card/CardCategory";
 import { onValue, ref } from "firebase/database";
 import { dbFirebase } from "../../firebaseConfig";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Trang chủ",
+  description: "Project nghe nhạc trực tuyến",
+};
 
 export default function Home() {
   const dataOfSinger: any = [];
@@ -64,6 +69,9 @@ export default function Home() {
       })
     })
   })
+  console.log(dataOfSinger);
+  console.log(dataSection1);
+  console.log(dataOfCategories);
   return (
     <>
       {/* // section1 */}
@@ -99,7 +107,7 @@ export default function Home() {
       </div>
       {/* section3 */}
       <div className="mt-[30px] mb-[120px]">
-        <Title title="Danh Mục Nổi Bật" />
+        <Title title="Ca sĩ Nổi Bật" />
         <div className="grid grid-cols-5 gap-x-[20px] pt-[20px] gap-y-[10px] ">
           {
             dataOfSinger.map((item:any, index:number) => (
