@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   description: "Project nghe nhạc trực tuyến",
 };
 
-export default function Home() {
+export default async function Home() {
   const dataOfSinger: any = [];
   const dataOfSingerRef = ref(dbFirebase, 'singers');
-  onValue(dataOfSingerRef, (snapshot) =>{
+  await onValue(dataOfSingerRef, (snapshot) =>{
     const data = snapshot.val();
     data.forEach((singer: any, index: number) => {
       dataOfSinger.push(
